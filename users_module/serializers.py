@@ -17,7 +17,7 @@
 #     username = None
 #     first_name = serializers.CharField(max_length=100)
 #     last_name = serializers.CharField(max_length=100)
-#     custom_field = serializers.CharField(max_length=100)
+#     # custom_field = serializers.CharField(max_length=100)
 
 #
 #     # def validate_custom_field(self, custom_field):
@@ -31,6 +31,7 @@
 #             'email': self.validated_data.get('email', ''),
 #             'first_name': self.validated_data.get('first_name', ''),
 #             'last_name': self.validated_data.get('last_name', ''),
+#             # 'custom_field': self.validated_data.get('custom_field', ''),
 #         }
 #
 #     def custom_signup(self, request, user):
