@@ -11,7 +11,7 @@
 5. Email configuration settings, preset to work with `Mailgun` but will work with any provider.
 6. `python-dotenv` package implemented and imported into `settings.py`. Information that is commonly stored in an env file has already been moved to the same.
 7. A environment file template along with instructions to modify it.
-8. A preset `.gitignore` file preset for Python projects, Visual Studio Code IDE, Jetbrains IDEs and other commonly ignored files. 
+8. A `.gitignore` file preset for Python projects, Visual Studio Code IDE, Jetbrains IDEs and other commonly ignored files. 
 9. The boilerplate is preconfigured to be ready to host on `Heroku`. It contains all the necessary packages and the `Procfile`. Along with any settings that need to be configured inside of `settings.py`. 
 10. `django-cors-headers` is implemented and the `clickjacking` middleware has been removed to ensure proper performance.
 11. `django-filters` is implemented and has been added to the `REST_FRAMEWORK.DEFAULT_FILTER_BACKENDS`.
