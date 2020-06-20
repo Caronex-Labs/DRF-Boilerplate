@@ -3,5 +3,8 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/DRF_Rest_Auth_Boilerplate/env_template.txt" />
+  </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (DRF_Rest_Auth_Boilerplate)" project-jdk-type="Python SDK" />
 </project>

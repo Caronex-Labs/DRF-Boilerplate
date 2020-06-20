@@ -74,6 +74,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'DRF_Rest_Auth_Boilerplate.urls'
 
+# If you wish to have a Custom User Model, please go to the users_module app and go through all the files there.
+# There are detailed instructions on setting up the same. Uncomment the following line once the setup there is
+# complete.
+
 # AUTH_USER_MODEL = 'users_module.User'
 
 TEMPLATES = [
