@@ -53,7 +53,7 @@
 #     email = models.EmailField(unique=True)
 #
 #     USERNAME_FIELD = 'email'
-#     REQUIRED_FIELDS = ['first_name', 'last_name', 'github_username']
+#     REQUIRED_FIELDS = ['first_name', 'last_name']
 #
 #     objects = UserManager()
 #

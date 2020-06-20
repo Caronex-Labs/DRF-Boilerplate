@@ -21,7 +21,7 @@
 
             <p class="para">{% blocktrans with confirmation.email_address.email as email %}Please confirm that
                 <a href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for
-                user {% endblocktrans %}{{ confirmation.email_address.user.github_username }}.</p>
+                user {% endblocktrans %}{{ confirmation.email_address.user.first_name }}.</p>
 
             <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
                 {% csrf_token %}
