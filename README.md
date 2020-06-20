@@ -25,7 +25,7 @@
 1. On the Github Repository of this project, you'll find an option to `Use this template` on the top right.
 2. Follow the prompts to create your new repository using this one as a template.
 3. Clone your new repository to your local system.
-4. After opening your new project inside a text editor or IDE, perform a `global search and replace` on the whole project for the phrase `DRF_Boilerplate` and change it to the name of your new project. For more detailed instructions, look up '*How to change Django project name*' and follow along.
+4. After opening your new project inside a text editor or IDE, perform a `global search and replace` on the whole project for the phrase `DRF_Boilerplate` and change it to the name of your new project. For more detailed instructions, look up '*How to change Django project name*' and follow along. Please make sure to change the name inside of the project configuration files of your IDE as well.
 5. Create your virtual environment and install all requirements with `pip install -r requirements.txt`
 6. Find the `env_template.txt` file inside of your main app directory ( the same directory as the `settings.py` ). Follow the instructions inside of this file.
 7. Go to the `settings.py` file and read through it. There are comments indicating any modifications you might want to make.

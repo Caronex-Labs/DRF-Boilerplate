@@ -1,4 +1,4 @@
-"""DRF_Rest_Auth_Boilerplate URL Configuration
+"""DRF_Boilerplate URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
