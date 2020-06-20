@@ -29,7 +29,7 @@
 5. Then change the name of the main app to the name of your project. 
 6. Delete your editor config files and restart your IDE. For more detailed instructions, look up '*How to change Django project name*' and follow along.   
 7. Create your virtual environment and install all requirements with `pip install -r requirements.txt`
-8. Find the `env_template.txt` file inside of your main app directory ( the same directory as the `settings.py` ). Follow the instructions inside of this file.
+8. Find the `env_template.txt` file inside of your main app directory ( the same directory as the `settings.py` ). Follow the instructions inside of this file. Check the references section for support.
 9. Go to the `settings.py` file and read through it. There are comments indicating any modifications you might want to make.
 10. Go through every file inside of the `users_module` app and follow any instructions that apply to you.
 11. Go through the templates provided, they contain instructions as well. These are generally the templates pertaining to the emails sent and the email confirmation pages. 
@@ -46,6 +46,7 @@
 - [`python-dotenv`](https://pypi.org/project/python-dotenv/)
 - [Configuring Django apps for Heroku](https://devcenter.heroku.com/articles/django-app-configuration)
 - [Configuring Mailgun for Django](https://simpleisbetterthancomplex.com/tutorial/2017/05/27/how-to-configure-mailgun-to-send-emails-in-a-django-app.html)
+- [Secret Key Generator for Django](https://miniwebtool.com/django-secret-key-generator/)
 
 ---
 
