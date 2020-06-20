@@ -34,6 +34,6 @@
 #             # 'custom_field': self.validated_data.get('custom_field', ''),
 #         }
 #
-#     def custom_signup(self, request, user):
-#         user.github_username = self.get_cleaned_data().get("github_username")
-#         user.save()
+#     # def custom_signup(self, request, user):
+#         # user.custom_field = self.get_cleaned_data().get("custom_field")
+#         # user.save()
