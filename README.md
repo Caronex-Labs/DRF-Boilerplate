@@ -26,14 +26,15 @@
 2. Follow the prompts to create your new repository using this one as a template.
 3. Clone your new repository to your local system.
 4. After opening your new project inside a text editor or IDE, perform a `global search and replace` on the whole project for the phrase `DRF_Boilerplate` and change it to the name of your new project. 
-5. Then change the name of the main app to the name of your project. For more detailed instructions, look up '*How to change Django project name*' and follow along.   
-6. Create your virtual environment and install all requirements with `pip install -r requirements.txt`
-7. Find the `env_template.txt` file inside of your main app directory ( the same directory as the `settings.py` ). Follow the instructions inside of this file.
-8. Go to the `settings.py` file and read through it. There are comments indicating any modifications you might want to make.
-9. Go through every file inside of the `users_module` app and follow any instructions that apply to you.
-10. Go through the templates provided, they contain instructions as well. These are generally the templates pertaining to the emails sent and the email confirmation pages. 
-11. Make migrations with the command: `python manage.py makemigrations` and then run them with `python manage.py migrate`
-12. Before you continue to build your project, check the `Admin Panel` ('`/admin/`') and the `swagger documentation` ('`/docs/`') to ensure that the boilerplate has set up successfully.
+5. Then change the name of the main app to the name of your project. 
+6. Delete your editor config files and restart your IDE. For more detailed instructions, look up '*How to change Django project name*' and follow along.   
+7. Create your virtual environment and install all requirements with `pip install -r requirements.txt`
+8. Find the `env_template.txt` file inside of your main app directory ( the same directory as the `settings.py` ). Follow the instructions inside of this file.
+9. Go to the `settings.py` file and read through it. There are comments indicating any modifications you might want to make.
+10. Go through every file inside of the `users_module` app and follow any instructions that apply to you.
+11. Go through the templates provided, they contain instructions as well. These are generally the templates pertaining to the emails sent and the email confirmation pages. 
+12. Make migrations with the command: `python manage.py makemigrations` and then run them with `python manage.py migrate`
+13. Before you continue to build your project, check the `Admin Panel` ('`/admin/`') and the `swagger documentation` ('`/docs/`') to ensure that the boilerplate has set up successfully.
 
 ---
 
