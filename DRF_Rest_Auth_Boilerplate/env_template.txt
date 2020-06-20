@@ -1,0 +1,9 @@
+# Instructions: Copy the contents of this file and place them in a new file called '.env' in the same location as this file. Then fill out all the details.
+
+
+DJANGO_SECRET_KEY='' # Copy your django secret key here
+PROD_HOSTNAME_1='' # This should be the production domain name.
+PROD_HOSTNAME_2='' # This should be your hosting service's url if it provides one. (Heroku for example provides one).
+EMAIL_HOST_PASSWORD="" # Copy your email host password or API key here
+EMAIL_HOST_USER='' # Copy your email host user here. In case of mailgun, this will be your primary 'no-reply@mail.subdomain.domain.com'.
+EMAIL_FROM="" # This is the email that will be shown to be the source of any emails sent from the backend.

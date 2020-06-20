@@ -1,0 +1,1 @@
+web: gunicorn DRF_Rest_Auth_Boilerplate.wsgi
