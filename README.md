@@ -25,14 +25,15 @@
 1. On the Github Repository of this project, you'll find an option to `Use this template` on the top right.
 2. Follow the prompts to create your new repository using this one as a template.
 3. Clone your new repository to your local system.
-4. After opening your new project inside a text editor or IDE, perform a `global search and replace` on the whole project for the phrase `DRF_Boilerplate` and change it to the name of your new project. For more detailed instructions, look up '*How to change Django project name*' and follow along. Please make sure to change the name inside of the project configuration files of your IDE as well.
-5. Create your virtual environment and install all requirements with `pip install -r requirements.txt`
-6. Find the `env_template.txt` file inside of your main app directory ( the same directory as the `settings.py` ). Follow the instructions inside of this file.
-7. Go to the `settings.py` file and read through it. There are comments indicating any modifications you might want to make.
-8. Go through every file inside of the `users_module` app and follow any instructions that apply to you.
-9. Go through the templates provided, they contain instructions as well. These are generally the templates pertaining to the emails sent and the email confirmation pages. 
-10. Make migrations with the command: `python manage.py makemigrations` and then run them with `python manage.py migrate`
-11. Before you continue to build your project, check the `Admin Panel` ('`/admin/`') and the `swagger documentation` ('`/docs/`') to ensure that the boilerplate has set up successfully.
+4. After opening your new project inside a text editor or IDE, perform a `global search and replace` on the whole project for the phrase `DRF_Boilerplate` and change it to the name of your new project. 
+5. Then change the name of the main app to the name of your project. For more detailed instructions, look up '*How to change Django project name*' and follow along.   
+6. Create your virtual environment and install all requirements with `pip install -r requirements.txt`
+7. Find the `env_template.txt` file inside of your main app directory ( the same directory as the `settings.py` ). Follow the instructions inside of this file.
+8. Go to the `settings.py` file and read through it. There are comments indicating any modifications you might want to make.
+9. Go through every file inside of the `users_module` app and follow any instructions that apply to you.
+10. Go through the templates provided, they contain instructions as well. These are generally the templates pertaining to the emails sent and the email confirmation pages. 
+11. Make migrations with the command: `python manage.py makemigrations` and then run them with `python manage.py migrate`
+12. Before you continue to build your project, check the `Admin Panel` ('`/admin/`') and the `swagger documentation` ('`/docs/`') to ensure that the boilerplate has set up successfully.
 
 ---
 
