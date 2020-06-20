@@ -25,7 +25,7 @@
 #             'fields': ('email', 'password1', 'password2', 'first_name', 'last_name'),
 #         }),
 #     )
-#     list_filter = ('groups')
+#     list_filter = ('groups',)
 #     list_display = ('email', 'first_name', 'last_name')
 #     search_fields = ('email', 'first_name', 'last_name')
 #     ordering = ('email',)
