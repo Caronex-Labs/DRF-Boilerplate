@@ -48,6 +48,7 @@
 - [Configuring Django apps for Heroku](https://devcenter.heroku.com/articles/django-app-configuration)
 - [Configuring Mailgun for Django](https://simpleisbetterthancomplex.com/tutorial/2017/05/27/how-to-configure-mailgun-to-send-emails-in-a-django-app.html)
 - [Secret Key Generator for Django](https://miniwebtool.com/django-secret-key-generator/)
+- [How to setup a Custom User Model](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
 
 ---
 
