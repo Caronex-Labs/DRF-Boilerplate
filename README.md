@@ -34,14 +34,15 @@
 10. Go through every file inside of the `users_module` app and follow any instructions that apply to you.
 11. Go through the templates provided, they contain instructions as well. These are generally the templates pertaining to the emails sent and the email confirmation pages. 
 12. Make migrations with the command: `python manage.py makemigrations` and then run them with `python manage.py migrate`
-13. Before you continue to build your project, check the `Admin Panel` ('`/admin/`') and the `swagger documentation` ('`/docs/`') to ensure that the boilerplate has set up successfully.
+13. You then need to run the command: `python manage.py collectstatic` in order to collect and store the static files needed for the Admin panel. If you want to avoid doing this for some reason, you can also just set `DEBUG=True` in the `settings.py` file. 
+14. Before you continue to build your project, check the `Admin Panel` ('`/admin/`') and the `swagger documentation` ('`/docs/`') to ensure that the boilerplate has set up successfully. You will have to run the command `python manage.py createsuperuser` in order to access the Admin Panel.
 
 ---
 
 ## References
 
 - [`django-rest-auth`](https://django-rest-auth.readthedocs.io/en/latest/introduction.html)
-- [`drf-yasg`](https://django-rest-auth.readthedocs.io/en/latest/introduction.html)
+- [`drf-yasg`](https://django-au-restth.readthedocs.io/en/latest/introduction.html)
 - [`django-cors-headers`](https://pypi.org/project/django-cors-headers/)
 - [`python-dotenv`](https://pypi.org/project/python-dotenv/)
 - [Configuring Django apps for Heroku](https://devcenter.heroku.com/articles/django-app-configuration)
