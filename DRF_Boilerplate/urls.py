@@ -17,6 +17,7 @@ Including another URLconf
 from allauth.account.views import ConfirmEmailView as AllauthConfirmEmailView
 # Django Imports
 from django.contrib import admin
+from django.http import HttpResponse
 from django.urls import path, re_path
 # Auto Documentation
 from drf_yasg import openapi
@@ -43,6 +44,12 @@ schema_view = get_schema_view(
     permission_classes=(permissions.AllowAny,),
 )
 
+
+# The following function is to be used with the password_reset_confirm URL. Scroll down for more details.
+def empty_view(request):
+    return HttpResponse('')
+
+
 urlpatterns = [
     # Inbuilt Endpoints
     path('admin/', admin.site.urls),
@@ -54,6 +61,14 @@ urlpatterns = [
     path('authentication/login/', LoginView.as_view(), name='rest_login'),
     path('authentication/logout/', LogoutView.as_view(), name='rest_logout'),
     path('authentication/password/change/', PasswordChangeView.as_view(), name='rest_password_change'),
+
+    # The following URL actually has no functionality. When sending an email to a user regarding their requested
+    # password change, we need a url with the name 'password_reset_confirm' so that we can use it as a template to
+    # create the actual URL that the user should be redirected to. This actual URL needs to point to the frontend,
+    # not back to the Django backend. This pointing is done based on the 'Domain Name' you provide in the 'sites'
+    # table. You can set the domain name by going to the admin panel and looking for the sites. Please refer to the
+    # rest-auth documentation for more details.
+    path('password-reset/<uidb64>/<token>/', empty_view, name='password_reset_confirm'),
 
     # Rest Auth Registration Endpoints
     path('authentication/registration/', RegisterView.as_view(), name='rest_register'),
