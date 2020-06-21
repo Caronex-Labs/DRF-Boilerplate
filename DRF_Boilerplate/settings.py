@@ -158,7 +158,9 @@ REST_FRAMEWORK = {
         # Set throttling rates here
         'anon': '50/minute',
         'user': '100/minute'
-    }
+    },
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
+
 }
 
 # REST AUTH SETTINGS

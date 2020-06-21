@@ -1,4 +1,7 @@
+# This page is the subject of the Email
+
+
 {% load i18n %}
 {% autoescape off %}
-{% blocktrans %}IEEE Project Management - E-mail Confirmation{% endblocktrans %}
+{% blocktrans %}My Website - E-mail Confirmation{% endblocktrans %}
 {% endautoescape %}
