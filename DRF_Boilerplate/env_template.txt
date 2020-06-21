@@ -7,3 +7,5 @@ PROD_HOSTNAME_2='' # This should be your hosting service's url if it provides on
 EMAIL_HOST_PASSWORD="" # Copy your email host password or API key here
 EMAIL_HOST_USER='' # Copy your email host user here. In case of mailgun, this will be your primary 'no-reply@mail.subdomain.domain.com'.
 EMAIL_FROM="" # This is the email that will be shown to be the source of any emails sent from the backend.
+LOGIN_REDIRECT_URL="" # This is the URL that the user will be redirected to upon successfull email confirmation.
+LOGIN_URL="" # This is the login URL of the frontend. It could be the same as the above. It's just here for good measure.

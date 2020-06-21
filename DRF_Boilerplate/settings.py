@@ -203,7 +203,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 # Ensure that the following two settings point to the frontend's Login route. This is to redirect the user after
 # successful email confirmations and such.
-LOGIN_URL = os.environ.get('LOGIN_REDIRECT_URL')
+LOGIN_URL = os.environ.get('LOGIN_URL')
 LOGIN_REDIRECT_URL = os.environ.get('LOGIN_REDIRECT_URL')
 
 # CORS SETTINGS
