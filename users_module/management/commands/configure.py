@@ -16,8 +16,8 @@ class Command(BaseCommand):
         self.stdout.write("We will now configure this project interactively...")
         self.stdout.write("Please answer the following questions about your project...\n\n")
         try:
-            self.rename_project(*args, **options)
-            self.env_setup(*args, **options)
+            # self.rename_project(*args, **options)
+            # self.env_setup(*args, **options)
             self.post_configuration(*args, **options)
         except:
             raise CommandError("Something went wrong.")
@@ -153,20 +153,10 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.SUCCESS("IDE/Code-Editor configuration files removed successfully\n\n\n"))
 
-        self.stdout.write("Collecting Static Files...\n\n")
-        self.venv_commands()
-        subprocess.run("python manage.py collectstatic", shell=True)
-        subprocess.run("deactivate", shell=True)
-        shutil.rmtree("venv")
-
-        self.stdout.write(self.style.SUCCESS("\nStatic File Collection Successful.\n\n\n"))
-
         create_venv = raw_input("Would you like for us to create a virtual environment using python3 venv ? (y/N): ")
 
         if create_venv.lower() in ['y', 'yes']:
-            status = self.venv_commands()
-            if status.returncode == 0:
-                subprocess.run("deactivate", shell=True)
+            subprocess.run("python3 -m venv venv", shell=True)
 
             self.stdout.write(self.style.SUCCESS("\nVirtual Environment Created Successfully.\n\n\n"))
 
@@ -177,11 +167,3 @@ class Command(BaseCommand):
         self.stdout.write(
             "Please restart your IDE/Code-Editor before continuing. The Readme has further instructions, "
             "complete those before starting your development.")
-
-    def venv_commands(self):
-        status = subprocess.run("python3 -m venv venv", shell=True)
-        if status.returncode == 0:
-            execfile('venv/bin/activate', dict(_file_='venv/bin/activate'))
-        if status.returncode == 0:
-            status = subprocess.run("pip install -r requirements.txt", shell=True)
-            return status
