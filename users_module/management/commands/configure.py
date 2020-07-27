@@ -15,8 +15,8 @@ class Command(BaseCommand):
         self.stdout.write("We will now configure this project interactively...")
         self.stdout.write("Please answer the following questions about your project...\n\n")
         try:
-            # self.rename_project(*args, **options)
-            # self.env_setup(*args, **options)
+            self.rename_project(*args, **options)
+            self.env_setup(*args, **options)
             self.post_configuration(*args, **options)
         except:
             raise CommandError("Something went wrong.")

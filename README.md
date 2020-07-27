@@ -25,11 +25,10 @@
 1. On the Github Repository of this project, you'll find an option to `Use this template` on the top right.
 2. Follow the prompts to create your new repository using this one as a template.
 3. Clone your new repository to your local system.
-4. After opening your new project inside a text editor or IDE, perform a `global search and replace` on the whole project for the phrase `DRF_Boilerplate` and change it to the name of your new project. 
-5. Then change the name of the main app to the name of your project. 
-6. Delete your editor config files and restart your IDE. For more detailed instructions, look up '*How to change Django project name*' and follow along.   
+4. Run the following command: `python3 manage.py configure`. Answer any questions it asks to interactively set the project up.
+5. Prompt your IDE/Code-Editor to index the project. The easiest way to do so is to just restart the IDE/Editor.
+6. You may rename the project folder to whatever you like, just ensure that **if your IDE asks you if you wish to rename the project or the folder... choose folder. We have already renamed the project**.
 7. Create your virtual environment and install all requirements with `pip install -r requirements.txt`
-8. Find the `env_template.txt` file inside of your main app directory ( the same directory as the `settings.py` ). Follow the instructions inside of this file. Check the references section for support.
 9. Go to the `settings.py` file and read through it. There are comments indicating any modifications you might want to make.
 10. Go through every file inside of the `users_module` app and follow any instructions that apply to you.
 11. Go through the templates provided, they contain instructions as well. These are generally the templates pertaining to the emails sent and the email confirmation pages. 
@@ -57,4 +56,8 @@
 - Amazon AWS Buckets configuration
 - `django-rest-auth` OAuth implementation
 - A demo project inside the template
-- A custom manage.py command to set the project up interactively.
+- Automating more of the setup using the custom management command. 
+    * Running `collectstatic` as a part of the setup.
+    * Creating the `virtual-environment` and installing the `requirements` as a part of the setup.
+    * Interactively setting up the User Model.
+    * Interactively setting up the registration process (Email confirmation, email required, username required, etc.)
