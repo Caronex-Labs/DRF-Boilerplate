@@ -1,6 +1,5 @@
 import os
 import shutil
-import subprocess
 
 from django.core.management.base import BaseCommand, CommandError
 from pip._vendor.distlib.compat import raw_input
@@ -152,16 +151,6 @@ class Command(BaseCommand):
                 f"{e.strerror}"))
 
         self.stdout.write(self.style.SUCCESS("IDE/Code-Editor configuration files removed successfully\n\n\n"))
-
-        create_venv = raw_input("Would you like for us to create a virtual environment using python3 venv ? (y/N): ")
-
-        if create_venv.lower() in ['y', 'yes']:
-            subprocess.run("python3 -m venv venv", shell=True)
-
-            self.stdout.write(self.style.SUCCESS("\nVirtual Environment Created Successfully.\n\n\n"))
-
-        else:
-            self.stdout.write("Skipping Virtual Environment Creation...\n\n\n")
 
         self.stdout.write(self.style.SUCCESS("\n\nCleanup Complete.\n\n"))
         self.stdout.write(
