@@ -62,3 +62,4 @@
     * Interactively setting up the registration process (Email confirmation, email required, username required, etc.)
 - Docker Production-level configuration for Django.
 - Travis CI configuration.
+- Github Actions configuration.
