@@ -53,7 +53,6 @@
 
 ## Roadmap
 
-- Amazon AWS Buckets configuration
 - `django-rest-auth` OAuth implementation
 - A demo project inside the template
 - Automating more of the setup using the custom management command. 
@@ -61,3 +60,5 @@
     * Creating the `virtual-environment` and installing the `requirements` as a part of the setup.
     * Interactively setting up the User Model.
     * Interactively setting up the registration process (Email confirmation, email required, username required, etc.)
+- Docker Production-level configuration for Django.
+- Travis CI configuration.
