@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
-import django_heroku
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -218,8 +217,10 @@ LOGIN_REDIRECT_URL = os.environ.get('LOGIN_REDIRECT_URL')
 # CORS SETTINGS
 CORS_ORIGIN_ALLOW_ALL = True
 
-# HEROKU SETTINGS
-django_heroku.settings(locals())
+if os.environ.get('PROD'):
+    # HEROKU SETTINGS
+    import django_heroku
+    django_heroku.settings(locals())
 
 if 'DATABASE_URL' in os.environ:
     import dj_database_url
