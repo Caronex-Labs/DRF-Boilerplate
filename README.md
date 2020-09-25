@@ -1,5 +1,7 @@
 # Caronex Labs - DRF Boilerplate
 
+Author: [Sameeran Bandishti](https://github.com/SameeranB) -> Founder - Caronex Labs
+
 ## Overview:
 > A Django Rest Framework implementation that comes with a set of pre-implemented features commonly seen in most projects.
 
