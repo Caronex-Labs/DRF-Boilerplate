@@ -32,7 +32,7 @@ Author: [Sameeran Bandishti](https://github.com/SameeranB) -> Founder - Caronex 
 2. Follow the prompts to create your new repository using this one as a template.
 3. Clone your new repository to your local system.
 4. Create your virtual environment and install all requirements with `pip install -r requirements.txt`
-5. Run the following command: `python3 manage.py configure`. Answer any questions it asks to interactively set the project up.
+5. Run the following command: `python manage.py configure`. Answer any questions it asks to interactively set the project up.
 6. Prompt your IDE/Code-Editor to index the project. The easiest way to do so is to just restart the IDE/Editor.
 7. Go to the `settings.py` file and read through it. There are comments indicating any modifications you might want to make.
 8. Go through every file inside of the `users_module` app and follow any instructions that apply to you.
