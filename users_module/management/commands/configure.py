@@ -113,8 +113,8 @@ class Command(BaseCommand):
             env_file.write(f"EMAIL_FROM='{email_from}'\n")
 
             login_redirect = raw_input(
-                "Please enter your frontend's Login URL. This is where users will be redirected to after they confirm their Email ID's or change their passwords. (Leave "
-                "it blank if you don't have one yet): ")
+                "Please enter your frontend's Login URL. This is where users will be redirected to after they confirm their Email ID's or change their passwords. (Add "
+                "any valid placeholder URL if you don't have one yet): ")
 
             env_file.write(f"LOGIN_REDIRECT_URL='{login_redirect}'\n")
             env_file.write(f"LOGIN_URL='{login_redirect}'\n")
