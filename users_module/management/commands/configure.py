@@ -123,16 +123,16 @@ class Command(BaseCommand):
             docker_usage = raw_input("Would you like to use docker for development? (y/N)")
 
             if docker_usage.lower() in ['y', 'yes']:
-                env_file.write(f"DOCKER=1")
+                env_file.write(f"DOCKER=1\n")
             else:
-                env_file.write(f"DOCKER=0")
+                env_file.write(f"DOCKER=0\n")
 
             heroku_usage = raw_input("Will you be hosting on Heroku? (y/N)")
 
             if heroku_usage.lower() in ['y', 'yes']:
-                env_file.write(f"HEROKU=1")
+                env_file.write(f"HEROKU=1\n")
             else:
-                env_file.write(f"HEROKU=0")
+                env_file.write(f"HEROKU=0\n")
 
             env_file.write(f"PROD=0")
 
