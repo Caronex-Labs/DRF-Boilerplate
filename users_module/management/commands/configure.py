@@ -47,6 +47,7 @@ class Command(BaseCommand):
                            'DRF_Boilerplate/wsgi.py',
                            'DRF_Boilerplate/asgi.py',
                            'DRF_Boilerplate/urls.py',
+                           'nginx/nginx.conf'
                            'manage.py',
                            'Procfile']
 
@@ -117,6 +118,23 @@ class Command(BaseCommand):
 
             env_file.write(f"LOGIN_REDIRECT_URL='{login_redirect}'\n")
             env_file.write(f"LOGIN_URL='{login_redirect}'\n")
+
+
+            docker_usage = raw_input("Would you like to use docker for development? (y/N)")
+
+            if docker_usage.lower() in ['y', 'yes']:
+                env_file.write(f"DOCKER=1")
+            else:
+                env_file.write(f"DOCKER=0")
+
+            heroku_usage = raw_input("Will you be hosting on Heroku? (y/N)")
+
+            if heroku_usage.lower() in ['y', 'yes']:
+                env_file.write(f"HEROKU=1")
+            else:
+                env_file.write(f"HEROKU=0")
+
+            env_file.write(f"PROD=0")
 
             self.stdout.write(self.style.SUCCESS(".env file created successfully...\n\n\n"))
 

@@ -9,4 +9,6 @@ EMAIL_HOST_USER='' # Copy your email host user here. In case of mailgun, this wi
 EMAIL_FROM="" # This is the email that will be shown to be the source of any emails sent from the backend.
 LOGIN_REDIRECT_URL="" # This is the URL that the user will be redirected to upon successfull email confirmation.
 LOGIN_URL="" # This is the login URL of the frontend. It could be the same as the above. It's just here for good measure.
-PROD=False # Setting this to true will enable the use of heroku local settings. It won't affect the development environement, but needs to be set on heroku to true.
+DOCKER=0
+HEROKU=0
+PROD=0 # Setting this to true will enable the use of heroku local settings. It won't affect the development environement, but needs to be set on heroku to true.

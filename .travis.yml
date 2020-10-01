@@ -1,0 +1,47 @@
+language: python
+
+# * The following configuration deploys to an elasticbeanstalk instance via docker.
+
+#services:
+#  - docker
+#
+#install:
+#  - docker build -t <Your Name>/<Image Name> -f Dockerfile .
+#
+#script:
+#  - docker run <Your Name>/<Image Name> python manage.py test
+
+
+#after_success:
+#  - docker build -t <Your Name>/<Main Code Container Name> .
+#  - docker build -t <Your Name>/<Nginx Container Name> ./nginx
+#  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+#  - docker push <Your Name>/<Main Code Container Name>
+#  - docker push <Your Name>/<Nginx Container Name>
+
+
+#deploy:
+#  provider: elasticbeanstalk
+#  region: us-west-2
+#  app: <App Name>
+#  env: <Environment Name>
+#  bucket_name: <AWS Bucket Name>
+#  bucket_path: <Desired Bucket Path>
+#  on:
+#    branch: master
+#  access_key_id: $AWS_ACCESS_KEY
+#  secret_access_key: $AWS_SECRET_KEY
+
+# * The following configuration is for performing tests without docker but not deploy
+
+services:
+  - postgresql
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - coverage run manage.py test
+
+after_success:
+  - coveralls

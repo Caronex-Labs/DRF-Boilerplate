@@ -52,6 +52,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
+    # * Add your desired social auth providers below
+    # 'allauth.socialaccount.providers.google',
+
     # Other Libraries
     'django_filters',
     'drf_yasg',
@@ -108,13 +111,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     },
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432,
-    }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+
 }
 
 # Password validation
@@ -217,15 +217,30 @@ LOGIN_REDIRECT_URL = os.environ.get('LOGIN_REDIRECT_URL')
 # CORS SETTINGS
 CORS_ORIGIN_ALLOW_ALL = True
 
-if os.environ.get('PROD'):
+# HEROKU Settings
+
+if bool(int(os.environ.get("PROD", "0"))) and bool(int(os.environ.get("HEROKU", "0"))):
     # HEROKU SETTINGS
     import django_heroku
+
     django_heroku.settings(locals())
 
-if 'DATABASE_URL' in os.environ:
-    import dj_database_url
+    if 'DATABASE_URL' in os.environ:
+        import dj_database_url
 
-    DATABASES = {'default': dj_database_url.config()}
+        DATABASES = {'default': dj_database_url.config()}
+
+# DOCKER Settings
+
+if bool(int(os.environ.get("DOCKER", "0"))):
+    DATABASES = {'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
+    }}
 
 # EMAIL SETTINGS
 EMAIL_HOST = 'smtp.mailgun.org'

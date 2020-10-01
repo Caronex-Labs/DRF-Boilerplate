@@ -78,5 +78,8 @@ urlpatterns = [
     re_path(r'^authentication/registration/account-confirm-email/(?P<key>[-:\w]+)/$', AllauthConfirmEmailView.as_view(),
             name='account_confirm_email'),
 
+    # * Uncomment the following line and import the respective view to enable social login
+    # path('authentication/registration/oauth/google/', GoogleLogin.as_view(), name="google_oauth"),
+
     # Documentation Endpoints
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='documentation')]

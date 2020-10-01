@@ -19,7 +19,11 @@ Author: [Sameeran Bandishti](https://github.com/SameeranB) -> Founder - Caronex 
 11. `django-filters` is implemented and has been added to the `REST_FRAMEWORK.DEFAULT_FILTER_BACKENDS`.
 12. Both `AnonRateThrottle` and `UserRateThrottle` have been implemented along with instructions on how to set the `Throttling Rates`.
 13. `DEBUG` set to `False` by default but `Error Propagation` is set to allow logging of errors to the server console even if not in debug mode.
-
+14. Coverage calculation is setup using coveralls. 
+15. Pre-configured Dockerfiles for development and production.
+16. Pre-configured Nginx server.
+17. Pre-configured Travis-CI.
+18. Pre-configured GitHub Actions
 ---
 
 ## Instructions
@@ -27,16 +31,15 @@ Author: [Sameeran Bandishti](https://github.com/SameeranB) -> Founder - Caronex 
 1. On the Github Repository of this project, you'll find an option to `Use this template` on the top right.
 2. Follow the prompts to create your new repository using this one as a template.
 3. Clone your new repository to your local system.
-4. Run the following command: `python3 manage.py configure`. Answer any questions it asks to interactively set the project up.
-5. Prompt your IDE/Code-Editor to index the project. The easiest way to do so is to just restart the IDE/Editor.
-6. You may rename the project folder to whatever you like, just ensure that **if your IDE asks you if you wish to rename the project or the folder... choose folder. We have already renamed the project**.
-7. Create your virtual environment and install all requirements with `pip install -r requirements.txt`
-9. Go to the `settings.py` file and read through it. There are comments indicating any modifications you might want to make.
-10. Go through every file inside of the `users_module` app and follow any instructions that apply to you.
-11. Go through the templates provided, they contain instructions as well. These are generally the templates pertaining to the emails sent and the email confirmation pages. 
-12. Make migrations with the command: `python manage.py makemigrations` and then the command `python manage.py makemigrations users_module` and then apply them with `python manage.py migrate`
-13. You then need to run the command: `python manage.py collectstatic` in order to collect and store the static files needed for the Admin panel. If you want to avoid doing this for some reason, you can also just set `DEBUG=True` in the `settings.py` file. 
-14. Before you continue to build your project, check the `Admin Panel` ('`/admin/`') and the `swagger documentation` ('`/docs/`') to ensure that the boilerplate has set up successfully. You will have to run the command `python manage.py createsuperuser` in order to access the Admin Panel.
+4. Create your virtual environment and install all requirements with `pip install -r requirements.txt`
+5. Run the following command: `python3 manage.py configure`. Answer any questions it asks to interactively set the project up.
+6. Prompt your IDE/Code-Editor to index the project. The easiest way to do so is to just restart the IDE/Editor.
+7. Go to the `settings.py` file and read through it. There are comments indicating any modifications you might want to make.
+8. Go through every file inside of the `users_module` app and follow any instructions that apply to you.
+9. Go through the templates provided, they contain instructions as well. These are generally the templates pertaining to the emails sent and the email confirmation pages. 
+10. Make migrations with the command: `python manage.py makemigrations` and then the command `python manage.py makemigrations users_module` and then apply them with `python manage.py migrate`
+11. You then need to run the command: `python manage.py collectstatic` in order to collect and store the static files needed for the Admin panel. If you want to avoid doing this for some reason, you can also just set `DEBUG=True` in the `settings.py` file. 
+12. Before you continue to build your project, check the `Admin Panel` ('`/admin/`') and the `swagger documentation` ('`/docs/`') to ensure that the boilerplate has set up successfully. You will have to run the command `python manage.py createsuperuser` in order to access the Admin Panel.
 
 ---
 
@@ -62,6 +65,4 @@ Author: [Sameeran Bandishti](https://github.com/SameeranB) -> Founder - Caronex 
     * Creating the `virtual-environment` and installing the `requirements` as a part of the setup.
     * Interactively setting up the User Model.
     * Interactively setting up the registration process (Email confirmation, email required, username required, etc.)
-- Docker Production-level configuration for Django.
-- Travis CI configuration.
-- Github Actions configuration.
+
