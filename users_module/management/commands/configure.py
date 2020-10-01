@@ -47,7 +47,7 @@ class Command(BaseCommand):
                            'DRF_Boilerplate/wsgi.py',
                            'DRF_Boilerplate/asgi.py',
                            'DRF_Boilerplate/urls.py',
-                           'nginx/nginx.conf'
+                           'nginx/nginx.conf',
                            'manage.py',
                            'Procfile']
 
