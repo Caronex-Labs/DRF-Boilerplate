@@ -77,47 +77,47 @@ class Command(BaseCommand):
                 "Please enter the Django Secret Key for this project. You can create one using online tools: ")
 
             if secret_key != '':
-                env_file.write(f"DJANGO_SECRET_KEY='{secret_key}'\n")
+                env_file.write(f"DJANGO_SECRET_KEY={secret_key}\n")
 
             domain_1 = raw_input(
                 "Please enter your production hostname. This will be the domain name to be used in production. (Leave "
                 "it blank if you don't have one yet): ")
 
-            env_file.write(f"PROD_HOSTNAME_1='{domain_1}'\n")
+            env_file.write(f"PROD_HOSTNAME_1={domain_1}\n")
 
             domain_2 = raw_input(
                 "Please enter your hosting hostname. This should be your hosting service's url if it provides one. ("
                 "Heroku for example provides one) (Leave "
                 "it blank if you don't have one yet): ")
 
-            env_file.write(f"PROD_HOSTNAME_2='{domain_2}'\n")
+            env_file.write(f"PROD_HOSTNAME_2={domain_2}\n")
 
             email_host_password = raw_input(
                 "Please enter your email host password or API key here. (Leave "
                 "it blank if you don't have one yet): ")
 
-            env_file.write(f"EMAIL_HOST_PASSWORD='{email_host_password}'\n")
+            env_file.write(f"EMAIL_HOST_PASSWORD={email_host_password}\n")
 
             email_host_user = raw_input(
                 "Please enter your email host user here. In case of Mailgun, this will be your primary "
                 "'no-reply@mail.subdomain.domain.com'. (Leave "
                 "it blank if you don't have one yet): ")
 
-            env_file.write(f"EMAIL_HOST_USER='{email_host_user}'\n")
+            env_file.write(f"EMAIL_HOST_USER={email_host_user}\n")
 
             email_from = raw_input(
                 "Please enter your from email here. This is the email that will be shown to be the source of any "
                 "emails sent from the backend. (Leave "
                 "it blank if you don't have one yet): ")
 
-            env_file.write(f"EMAIL_FROM='{email_from}'\n")
+            env_file.write(f"EMAIL_FROM={email_from}\n")
 
             login_redirect = raw_input(
                 "Please enter your frontend's Login URL. This is where users will be redirected to after they confirm their Email ID's or change their passwords. (Add "
                 "any valid placeholder URL if you don't have one yet): ")
 
-            env_file.write(f"LOGIN_REDIRECT_URL='{login_redirect}'\n")
-            env_file.write(f"LOGIN_URL='{login_redirect}'\n")
+            env_file.write(f"LOGIN_REDIRECT_URL={login_redirect}\n")
+            env_file.write(f"LOGIN_URL={login_redirect}\n")
 
 
             docker_usage = raw_input("Would you like to use docker for development? (y/N)")
