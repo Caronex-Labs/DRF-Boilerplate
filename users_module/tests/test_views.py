@@ -23,7 +23,7 @@ class TestViews(TestSetup):
 
     def test_user_login_success(self):
         res = self.client.post(self.register_url, self.user_registration_data, format="json")
-        email = res.data['email']
+        email = self.user_data['email']
         user = EmailAddress.objects.get(email=email)
         user.verified = True
         user.save()

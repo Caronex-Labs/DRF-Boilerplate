@@ -12,7 +12,9 @@ class TestSetup(APITestCase):
             'email': 'email@gmail.com',
             # 'username': 'username1234',
             "password1": 'password1234',
-            "password2": 'password1234'
+            "password2": 'password1234',
+            "first_name": "User",
+            "last_name": "Test"
         }
 
         self.user_data = {
