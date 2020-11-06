@@ -1,6 +1,5 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.admin import UserAdmin
 
 from users_module.models import User
 
@@ -9,7 +8,4 @@ from users_module.models import User
 # Modufy the following code to customize user admin
 
 
-@admin.register(User)
-class UserAdmin(BaseUserAdmin):
-    """Define admin model for custom User model with no email field."""
-    pass
+admin.site.register(User, UserAdmin)

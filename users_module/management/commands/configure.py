@@ -105,6 +105,15 @@ class Command(BaseCommand):
             with open(f"{self.project_name}/users_module/admin.py", "w") as file:
                 file.write(admin_code)
 
+            with open(
+                f"{self.project_name}/users_module/resources/custom_serializers.txt",
+                "r",
+            ) as serializers_file:
+                serializers_code = serializers_file.read()
+
+            with open(f"{self.project_name}/users_module/serializers.py", "w") as file:
+                file.write(serializers_code)
+
             # Modify test data according to use email as login and resitration
             reg_dict = {
                 "email": "email@gmail.com",
@@ -130,6 +139,19 @@ class Command(BaseCommand):
                 f"{self.project_name}/users_module/tests/resources/user.json", "r"
             ) as file:
                 json.dump(user_dict, file)
+
+            # Change settings to use email field as username
+            with open(f"{self.project_name}/settings.py", "r") as settings_file:
+                settings = settings_file.readlines()
+
+            settings[201] = 'ACCOUNT_USER_MODEL_USERNAME_FIELD = None\n'
+            settings[204] = 'ACCOUNT_USERNAME_REQUIRED = False\n'
+            settings[178] = "    'LOGIN_SERIALIZER': 'users_module.serializers.CustomLoginSerializer'\n"
+            settings[182] = "    'REGISTER_SERIALIZER': 'users_module.serializers.CustomRegisterSerializer'\n"
+            settings[189] = "ACCOUNT_AUTHENTICATION_METHOD = 'email'\n"
+
+            with open(f"{self.project_name}/settings.py", "w") as settings_file:
+                settings_file.writelines(settings)
 
             self.stdout.write(
                 self.style.SUCCESS("Changed default username field to email")
