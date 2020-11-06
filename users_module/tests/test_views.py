@@ -19,7 +19,7 @@ class TestViews(TestSetup):
     def test_user_login_failure_unverified(self):
         self.client.post(self.register_url, self.user_registration_data, format="json")
         res = self.client.post(self.login_url, self.user_data, format='json')
-        self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_user_login_success(self):
         res = self.client.post(self.register_url, self.user_registration_data, format="json")
