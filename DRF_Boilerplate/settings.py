@@ -80,7 +80,7 @@ ROOT_URLCONF = 'DRF_Boilerplate.urls'
 # There are detailed instructions on setting up the same. Uncomment the following line once the setup there is
 # complete.
 
-# AUTH_USER_MODEL = 'users_module.User'
+AUTH_USER_MODEL = 'users_module.User'
 
 TEMPLATES = [
     {
