@@ -226,8 +226,8 @@ class Command(BaseCommand):
                 env_file.write(f"DOCKER=1\n")
             else:
                 env_file.write(f"DOCKER=0\n")
-                os.rmdir("nginx")
-                os.rmdir("Docker")
+                shutil.rmtree("nginx")
+                shutil.rmtree("Docker")
 
             heroku_usage = raw_input("Will you be hosting on Heroku? (y/N)")
 
@@ -254,7 +254,7 @@ class Command(BaseCommand):
 
         self.stdout.write("Removing configuration resources")
 
-        os.rmdir(f"{self.project_name}/users_module/resources")
+        shutil.rmtree(f"{self.project_name}/users_module/resources")
 
         # self.stdout.write("Removing Readme...\n\n")
         # try:
@@ -282,7 +282,7 @@ class Command(BaseCommand):
                 file.write(configuration)
 
         else:
-            os.rmdir(f"{self.project_name}/users_module/management")
+            shutil.rmtree(f"{self.project_name}/users_module/management")
 
         self.stdout.write("Removing IDE/Code-Editor configuration files...\n\n")
         try:
