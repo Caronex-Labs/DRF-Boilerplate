@@ -17,13 +17,13 @@ class Command(BaseCommand):
         self.stdout.write(
             "Please answer the following questions about your project...\n\n"
         )
-        # try:
-        self.rename_project(*args, **options)
-        self.env_setup(*args, **options)
-        self.configure_user_model(*args, **options)
-        self.post_configuration(*args, **options)
-        # except:
-        #     raise CommandError("Something went wrong.")
+        try:
+            self.rename_project(*args, **options)
+            self.env_setup(*args, **options)
+            self.configure_user_model(*args, **options)
+            self.post_configuration(*args, **options)
+        except:
+            raise CommandError("Something went wrong.")
 
     def rename_project(self, *args, **options):
         name_input = ""
