@@ -5,6 +5,5 @@ from django.db import models
 # ease as recommended by
 # https://docs.djangoproject.com/en/3.1/topics/auth/customizing/#using-a-custom-user-model-when-starting-a-project
 
-
 class User(AbstractUser):
     pass

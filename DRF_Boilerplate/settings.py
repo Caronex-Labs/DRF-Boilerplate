@@ -80,7 +80,7 @@ ROOT_URLCONF = 'DRF_Boilerplate.urls'
 # There are detailed instructions on setting up the same. Uncomment the following line once the setup there is
 # complete.
 
-# AUTH_USER_MODEL = 'users_module.User'
+AUTH_USER_MODEL = 'users_module.User'
 
 TEMPLATES = [
     {
@@ -176,16 +176,10 @@ REST_FRAMEWORK = {
 SITE_ID = 1
 
 REST_AUTH_SERIALIZERS = {
-
-    # Add custom serializers for Rest Auth
-
     # 'LOGIN_SERIALIZER': 'users_module.serializers.CustomLoginSerializer'
 }
 
 REST_AUTH_REGISTER_SERIALIZERS = {
-
-    # Add custom serializers for Rest Auth Registration
-
     # 'REGISTER_SERIALIZER': 'users_module.serializers.CustomRegisterSerializer'
 }
 
@@ -193,16 +187,16 @@ REST_AUTH_REGISTER_SERIALIZERS = {
 ACCOUNT_EMAIL_REQUIRED = True
 
 # Choose whether to use Email or Username to login. Omit to set as 'username'
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 
 # Choose if user is logged out after changing password
 LOGOUT_ON_PASSWORD_CHANGE = True
 
 # Choose the username field. None if not using username. Omit setting if using the default 'username' field.
-ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+# ACCOUNT_USER_MODEL_USERNAME_FIELD = "username"
 
 # Choose whether a username is required during registration. Omit setting if using the default 'username' field.
-ACCOUNT_USERNAME_REQUIRED = False
+# ACCOUNT_USERNAME_REQUIRED = False
 
 # Choose whether old password needs to be entered when changing password
 OLD_PASSWORD_FIELD_ENABLED = True
