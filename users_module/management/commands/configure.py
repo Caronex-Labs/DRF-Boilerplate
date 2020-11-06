@@ -17,13 +17,13 @@ class Command(BaseCommand):
         self.stdout.write(
             "Please answer the following questions about your project...\n\n"
         )
-        try:
-            self.rename_project(*args, **options)
-            self.env_setup(*args, **options)
-            self.configure_user_model(*args, **options)
-            self.post_configuration(*args, **options)
-        except:
-            raise CommandError("Something went wrong.")
+        # try:
+        self.rename_project(*args, **options)
+        self.env_setup(*args, **options)
+        self.configure_user_model(*args, **options)
+        self.post_configuration(*args, **options)
+        # except:
+        #     raise CommandError("Something went wrong.")
 
     def rename_project(self, *args, **options):
         name_input = ""
@@ -88,30 +88,30 @@ class Command(BaseCommand):
 
         if default_to_email.lower() in ["y", "yes"]:
             with open(
-                f"{self.project_name}/users_module/resources/user_model_with_email_username.txt",
+                f"users_module/resources/user_model_with_email_username.txt",
                 "r",
             ) as model_file:
                 model_code = model_file.read()
 
-            with open(f"{self.project_name}/users_module/models.py", "w") as file:
+            with open(f"users_module/models.py", "w") as file:
                 file.write(model_code)
 
             with open(
-                f"{self.project_name}/users_module/resources/users_admin.txt",
+                f"users_module/resources/users_admin.txt",
                 "r",
             ) as admin_file:
                 admin_code = admin_file.read()
 
-            with open(f"{self.project_name}/users_module/admin.py", "w") as file:
+            with open(f"users_module/admin.py", "w") as file:
                 file.write(admin_code)
 
             with open(
-                f"{self.project_name}/users_module/resources/custom_serializers.txt",
+                f"users_module/resources/custom_serializers.txt",
                 "r",
             ) as serializers_file:
                 serializers_code = serializers_file.read()
 
-            with open(f"{self.project_name}/users_module/serializers.py", "w") as file:
+            with open(f"users_module/serializers.py", "w") as file:
                 file.write(serializers_code)
 
             # Modify test data according to use email as login and resitration
@@ -130,24 +130,26 @@ class Command(BaseCommand):
             }
 
             with open(
-                f"{self.project_name}/users_module/tests/resources/user_registration_data.json",
-                "r",
+                f"users_module/tests/resources/user_registration_data.json",
+                "w",
             ) as file:
                 json.dump(reg_dict, file)
 
-            with open(
-                f"{self.project_name}/users_module/tests/resources/user.json", "r"
-            ) as file:
+            with open(f"users_module/tests/resources/user.json", "w") as file:
                 json.dump(user_dict, file)
 
             # Change settings to use email field as username
             with open(f"{self.project_name}/settings.py", "r") as settings_file:
                 settings = settings_file.readlines()
 
-            settings[201] = 'ACCOUNT_USER_MODEL_USERNAME_FIELD = None\n'
-            settings[204] = 'ACCOUNT_USERNAME_REQUIRED = False\n'
-            settings[178] = "    'LOGIN_SERIALIZER': 'users_module.serializers.CustomLoginSerializer'\n"
-            settings[182] = "    'REGISTER_SERIALIZER': 'users_module.serializers.CustomRegisterSerializer'\n"
+            settings[201] = "ACCOUNT_USER_MODEL_USERNAME_FIELD = None\n"
+            settings[204] = "ACCOUNT_USERNAME_REQUIRED = False\n"
+            settings[
+                178
+            ] = "    'LOGIN_SERIALIZER': 'users_module.serializers.CustomLoginSerializer'\n"
+            settings[
+                182
+            ] = "    'REGISTER_SERIALIZER': 'users_module.serializers.CustomRegisterSerializer'\n"
             settings[189] = "ACCOUNT_AUTHENTICATION_METHOD = 'email'\n"
 
             with open(f"{self.project_name}/settings.py", "w") as settings_file:
@@ -252,10 +254,6 @@ class Command(BaseCommand):
             )
         )
 
-        self.stdout.write("Removing configuration resources")
-
-        shutil.rmtree(f"{self.project_name}/users_module/resources")
-
         # self.stdout.write("Removing Readme...\n\n")
         # try:
         #     if os.path.exists("README.md"):
@@ -272,17 +270,19 @@ class Command(BaseCommand):
         )
         if create_admin_with_configure.lower() in ["y", "yes"]:
             with open(
-                f"{self.project_name}/users_module/resources/configure_admin_command.txt"
+                f"users_module/resources/configure_admin_command.txt"
             ) as configure_file:
                 configuration = configure_file.read()
 
-            with open(
-                f"{self.project_name}/users_module/management/commands/configure.py"
-            ) as file:
+            with open(f"users_module/management/commands/configure.py", "w") as file:
                 file.write(configuration)
 
         else:
             shutil.rmtree(f"{self.project_name}/users_module/management")
+
+        self.stdout.write("Removing configuration resources")
+
+        shutil.rmtree(f"users_module/resources")
 
         self.stdout.write("Removing IDE/Code-Editor configuration files...\n\n")
         try:
